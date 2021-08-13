@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  project:
+    build:
+      context: ./project
+      dockerfile: ../Dockerfile
+    ports:
+      - 8888:8888
+    volumes:
+      - type: bind
+        source: ./project/notebooks
+        target: /home/jovyan/notebooks
+      - type: bind
+        source: ./project/data
+        target: /home/jovyan/data
+      - type: bind
+        source: ./project/src
+        target: /home/jovyan/src
+    env_file: ./project/.env
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
