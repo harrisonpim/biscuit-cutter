@@ -1,8 +1,8 @@
 # Common changes to the project configuration
 
-## Passing AWS credentials to the container
+## Passing AWS credentials to a container
 
-Add a new entry to the `volumes` section of `docker-compose.yml`
+Add a new entry to the `volumes` section of the relevant service in `docker-compose.yml`
 
 ```yaml
 - type: volume
@@ -10,6 +10,3 @@ Add a new entry to the `volumes` section of `docker-compose.yml`
   target: /home/app/.aws/credentials
   readonly: true
 ```
-
-## Adding local database containers
-

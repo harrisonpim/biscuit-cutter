@@ -8,16 +8,14 @@ With those needs in mind, the structure emphasises reproducibility, collaboratio
 
 Most of my research begins as a set of jupyter notebooks. This template provides that minimal starting point, using the[jupyter/scipy-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-scipy-notebook) image as a base.
 
-Beyond that stage, I've included some instructions for [scaling research out horizontally or vertically](docs/secondary-containers.md), and making [common config changes](docs/common-config-changes.md).
+Beyond that point, I've included some instructions for [scaling research out horizontally or vertically](docs/secondary-containers.md), and making [common config changes](docs/common-config-changes.md).
+
+I'll try to keep updating this repo as my own workflow continues to develop.
 
 ## Requirements
 
 - docker
 
-## Developing
+## Getting started
 
-To build and start the core jupyter service, run
-
-```shell
-docker compose up --build project
-```
+[See the instructions](/docs/getting-started.md)
