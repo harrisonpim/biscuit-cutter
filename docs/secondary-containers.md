@@ -2,13 +2,15 @@
 
 ## More jupyter containers for separate projects
 
-- create a duplicate the `/project` directory and give it a new name
-- duplicate the `project` service in `docker-compose.yml` and match the directory's name
-- run it using the corresponding `docker compose` command
+- duplicate the `/jupyter` directory and give it a new project name
+- also duplicate the corresponding `jupyter` service in `docker-compose.yml` and match the new project's name
+- run it using the corresponding `docker compose up --build YOUR_NEW_PROJECT_NAME` command
 
 ## Related containers for the same project
 
-All of the following services can be brought up alonside the jupyter container by referencing them with the [depends_on](https://docs.docker.com/compose/compose-file/compose-file-v3/#depends_on) option in the `docker-compose.yml`'s jupyter service. The can also be run by referencing them directly in the `docker compose up` command. Once live, they can then be accessed as you would a local application, using the service name instead of localhost (eg `http://elasticsearch:80` instead of `http://localhost:80`).
+All of the following services can be brought up alongside the jupyter container by referencing them with the [depends_on](https://docs.docker.com/compose/compose-file/compose-file-v3/#depends_on) option in the `docker-compose.yml`'s jupyter service. They can also be run by referencing them directly in the `docker compose up --build WHATEVER_SERVICE` command.
+
+Once live, they can then be accessed as you would a local application outside docker, using the service name instead of localhost (eg `http://elasticsearch:80` instead of `http://localhost:80`).
 
 ### APIs
 
@@ -47,9 +49,29 @@ services:
       - 80:80
 ```
 
+```python
+#main.py
+from typing import Optional
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: Optional[str] = None):
+    return {"item_id": item_id, "q": q}
+
+```
+
 ### Databases
 
-It's often useful to experiment with a local database rather than relying on cloud resources. Configuration for a couple of common database types is included here.
+It's often useful to experiment with a local database before relying on cloud resources. Configuration for a couple of common database types is included here.
 
 #### Postgres
 
