@@ -8,11 +8,11 @@ Most of my research begins as a set of jupyter notebooks. This template provides
 
 Beyond that point, I've included:
 
-- some instructions for [scaling research out horizontally or vertically](docs/secondary-containers.md)
-- making [common config changes](docs/common-config-changes.md)
+- instructions for [scaling research out horizontally or vertically](docs/secondary-containers.md)
+- instructions for making [common config changes](docs/common-config-changes.md)
 - a couple of [non-essential recommendations](docs/recommendations.md)
 
-I'll try to keep updating this repo as my own workflow continues to develop.
+I'll try to keep this repo up to date as my own workflow develops.
 
 ## Requirements
 
