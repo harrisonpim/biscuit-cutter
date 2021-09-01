@@ -4,11 +4,11 @@
 
 - duplicate the `/jupyter` directory and give it a new project name
 - also duplicate the corresponding `jupyter` service in `docker-compose.yml` and match the new project's name
-- run it using the corresponding `docker compose up --build YOUR_NEW_PROJECT_NAME` command
+- run it using the corresponding `docker-compose up --build YOUR_NEW_PROJECT_NAME` command
 
 ## Related containers for the same project
 
-All of the following services can be brought up alongside the jupyter container by referencing them with the [depends_on](https://docs.docker.com/compose/compose-file/compose-file-v3/#depends_on) option in the `docker-compose.yml`'s jupyter service. They can also be run by referencing them directly in the `docker compose up --build WHATEVER_SERVICE` command.
+All of the following services can be brought up alongside the jupyter container by referencing them with the [depends_on](https://docs.docker.com/compose/compose-file/compose-file-v3/#depends_on) option in the `docker-compose.yml`'s jupyter service. They can also be run by referencing them directly in the `docker-compose up --build WHATEVER_SERVICE` command.
 
 Once live, they can then be accessed as you would a local application outside docker, using the service name instead of localhost (eg `http://elasticsearch:80` instead of `http://localhost:80`).
 
