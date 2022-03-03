@@ -76,10 +76,13 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+.jupyter
+**/.local/**/*
 
 # IPython
 profile_default/
 ipython_config.py
+.ipython
 
 # pyenv
 .python-version
@@ -129,8 +132,8 @@ dmypy.json
 
 # Project 
 data/**/*
-**/cache/**/*
 !data/**/
 !**/.gitkeep
 !**/README.md
+
 .DS_Store
