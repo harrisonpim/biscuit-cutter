@@ -2,18 +2,20 @@ version: "3.8"
 
 services:
   jupyter:
-    build: jupyter
+    build: 
+      dockerfile: jupyter/Dockerfile
+      context: .
     ports:
       - 8888:8888
     volumes:
       - type: bind
         source: ./jupyter/notebooks
-        target: /home/jovyan/notebooks
+        target: /home/jovyan/
       - type: bind
-        source: ./jupyter/data
+        source: ./data
         target: /home/jovyan/data
       - type: bind
-        source: ./jupyter/src
+        source: ./src
         target: /home/jovyan/src
     env_file:
       - .env
